@@ -9,8 +9,14 @@ class HomeController extends Controller
     public function index()
     {
         return view(
-        'home.index',
-        ['title' => 'Homepage']
+            'home.index',
+            ['title' => 'Homepage']
         );
     }
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
 }
