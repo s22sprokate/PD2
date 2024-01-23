@@ -10,7 +10,7 @@
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
 
-<body>
+<body style="background-color: #778899;">
     <header class="navbar navbar-dark bg-dark mb-5">
         <div class="container">
             <span class="navbar-brand mb-0 h1">{{ $title }}</span>
@@ -20,7 +20,7 @@
         <div id="root"></div>
     </main>
     <footer class="mt-5 py-5">
-        <div class="container">
+        <div class="container" style="font-size: 2rem;">
             K. Sproģe, VeA, 2024
         </div>
     </footer>

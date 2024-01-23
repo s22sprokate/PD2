@@ -6,7 +6,8 @@
     <thead class="thead-light">
         <tr>
             <th>User</th>
-            <th>Product</th>
+            <th>User</th>
+            <th>Author</th>
             <th>Rating</th>
             <th>Comment</th>
         </tr>
