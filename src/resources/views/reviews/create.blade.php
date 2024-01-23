@@ -18,16 +18,16 @@
     @csrf
     <div class="mb-3">
         <label for="product-id" class="form-label">Product name</label>
-        <select id="product-id" name="product_id" class="form-select @error('product_id') is-invalid @enderror">
+        <select id="product-id" name="book_id" class="form-select @error('book_id') is-invalid @enderror">
             <option value="">Choose the book!</option>
             @foreach($books as $book)
-            <option value="{{ $book->id }}" @if ($book->id == old('product_id', $review->book->id ?? false)) selected
+            <option value="{{ $book->id }}" @if ($book->id == old('book_id', $review->book->id ?? false)) selected
                 @endif
                 >{{ $book->name }}</option>
             @endforeach
         </select>
-        @error('product_id')
-        <p class="invalid-feedback">{{ $errors->first('product_id') }}</p>
+        @error('book_id')
+        <p class="invalid-feedback">{{ $errors->first('book_id') }}</p>
         @enderror
     </div>
     <div class="mb-3">

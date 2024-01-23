@@ -16,7 +16,7 @@ class BookController extends Controller
             'book.list',
             [
                 'title' => 'Books',
-                'items' => $items
+                'items' => $items,
             ]
         );
     }

@@ -12,8 +12,8 @@
         </div>
 
         <div>
-            <label for="product_id">Product ID:</label>
-            <input type="text" name="product_id" id="product_id" required>
+            <label for="book_id">Product ID:</label>
+            <input type="text" name="book_id" id="book_id" required>
         </div>
 
         <div>

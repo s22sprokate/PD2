@@ -13,12 +13,12 @@ class ReviewController extends Controller
 {
     public function index()
     {
-        $reviews = Review::all();
+        $reviews = Review::orderBy('rating', 'asc')->get();
         return view(
             "reviews.index",
             [
                 'title' => 'Reviews',
-                'reviews' => $reviews,
+                'items' => $reviews,
             ]
         );
     }
@@ -58,7 +58,7 @@ class ReviewController extends Controller
     public function delete(Review $reviews)
     {
         $reviews->delete();
-        return redirect()->route("reviews.index")->with("success", "Review deleted successfuly");
+        return redirect("/review");
     }
 
     private function saveReviewData(Review $review, Request $request)
