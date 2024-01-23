@@ -13,7 +13,7 @@ class ReviewRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'product_id' => 'required',
+            'book_id' => 'required',
             'rating' => 'integer|min:1|max:5',
             'comment'=> 'nullable',
         ];
@@ -31,7 +31,7 @@ class ReviewRequest extends FormRequest
     public function attributes()
     {
         return [
-            'product_id' => 'Grāmatas id',
+            'book_id' => 'Grāmatas id',
             'rating' => 'Atsauksme',
             'comment' => 'Komentārs',
         ];

@@ -15,7 +15,7 @@ class ReviewController extends Controller
     {
         $reviews = Review::orderBy('rating', 'asc')->get();
         return view(
-            "reviews.index",
+            "reviews.list",
             [
                 'title' => 'Reviews',
                 'items' => $reviews,
@@ -45,20 +45,29 @@ class ReviewController extends Controller
         return redirect('/reviews');
     }
 
-    public function show(Review $review)
+    public function update(Review $review)
     {
-        return view("reviews.show", compact("review"));
+        $books = Book::orderBy('name', 'asc')->get();
+        return view(
+            'reviews.create',
+            [
+                'title' => 'Edit book',
+                'review' => $review,
+                'books' => $books,
+            ]
+        );
     }
 
     public function patch(Review $reviews, ReviewRequest $request)
     {
-        return redirect('/review/update/' . $reviews->id);
+        return redirect('/reviews/update/' . $reviews->id);
     }
 
-    public function delete(Review $reviews)
+
+    public function delete(Review $review)
     {
-        $reviews->delete();
-        return redirect("/review");
+        $review->delete();
+        return redirect("/reviews");
     }
 
     private function saveReviewData(Review $review, Request $request)

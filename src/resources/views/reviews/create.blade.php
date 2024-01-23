@@ -17,8 +17,8 @@
 <form method="POST" action="{{ $review->exists ? '/reviews/patch' . $review->id : '/reviews/put'}}">
     @csrf
     <div class="mb-3">
-        <label for="product-id" class="form-label">Product name</label>
-        <select id="product-id" name="book_id" class="form-select @error('book_id') is-invalid @enderror">
+        <label for="book-id" class="form-label">Product name</label>
+        <select id="book-id" name="book_id" class="form-select @error('book_id') is-invalid @enderror">
             <option value="">Choose the book!</option>
             @foreach($books as $book)
             <option value="{{ $book->id }}" @if ($book->id == old('book_id', $review->book->id ?? false)) selected
