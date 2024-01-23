@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\DataController;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/authors', [AuthorController::class, 'list']);
@@ -27,8 +28,14 @@ Route::post('/auth', [AuthController::class, 'authenticate']);
 Route::get('/logout', [AuthController::class, 'logout']);
 
 Route::get('/reviews', [ReviewController::class, 'index']);
-Route::get('/reviews/create', [ReviewController::class,'create']);
+Route::get('/reviews/create', [ReviewController::class, 'create']);
 Route::post('/reviews/put', [ReviewController::class, 'put']);
-Route::get('/reviews/{review}/edit', [ReviewController::class,'edit']);
-Route::get('/reviews/update/{review}', [ReviewController::class,'update']);
-Route::post('/reviews/delete/{review}', [ReviewController::class,'delete']);
+Route::get('/reviews/{review}/edit', [ReviewController::class, 'edit']);
+Route::get('/reviews/update/{review}', [ReviewController::class, 'update']);
+Route::post('/reviews/delete/{review}', [ReviewController::class, 'delete']);
+
+Route::prefix('data')->group(function () {
+    Route::get('/get-top-books', [DataController::class, 'getTopBooks']);
+    Route::get('/get-book/{book}', [DataController::class, 'getBook']);
+    Route::get('/get-relatedbooks/{book}', [DataController::class, 'getRelatedBooks']);
+});
