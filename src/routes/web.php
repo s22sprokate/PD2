@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ReviewController;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/authors', [AuthorController::class, 'list']);
@@ -24,3 +25,11 @@ Route::post('/books/delete/{book}', [BookController::class, 'delete']);
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/auth', [AuthController::class, 'authenticate']);
 Route::get('/logout', [AuthController::class, 'logout']);
+
+Route::get('/reviews', [ReviewController::class, 'index']);
+Route::get('/reviews/create', [ReviewController::class,'create']);
+Route::post('/reviews/put', [ReviewController::class, 'put']);
+Route::get('/reviews/{review}', [ReviewController::class,'show']);
+Route::get('/reviews/{review}/edit', [ReviewController::class,'edit']);
+Route::put('/reviews/{review}', [ReviewController::class,'update']);
+Route::delete('reviews/{review}', [ReviewController::class,'delete']);
