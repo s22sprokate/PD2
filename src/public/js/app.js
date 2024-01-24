@@ -175,15 +175,13 @@ function renderSingle(book) {
             priceValue.innerHTML = "&euro; " + book.price;
             dl.appendChild(priceValue);
 
-            // genre
-
         info.appendChild(dl);
 
         // "Go back" button
         let btn = document.createElement('a');
         btn.classList = 'btn btn-dark go-back float-left';
         btn.textContent = 'Home';
-        btn.href = '#';
+        btn.href = '/index';
         info.appendChild(btn);
 
     // add info div to row

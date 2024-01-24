@@ -5,9 +5,9 @@
 <table class="table table-sm table-hover table-striped">
     <thead class="thead-light">
         <tr>
+            <th>Review ID</th>
             <th>User</th>
-            <th>User</th>
-            <th>Author</th>
+            <th>Book ID</th>
             <th>Rating</th>
             <th>Comment</th>
         </tr>
@@ -17,7 +17,7 @@
         <tr>
             <td>{{ $review->id }}</td>
             <td>{{ $review->user->name }}</td>
-            <td>{{ $review->book->name }}</td>
+            <td>{{ $review->book_id}}</td>
             <td>{{ $review->rating }}</td>
             <td>{{ $review->comment }}</td>
             <td>
