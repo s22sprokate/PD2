@@ -181,7 +181,7 @@ function renderSingle(book) {
         let btn = document.createElement('a');
         btn.classList = 'btn btn-dark go-back float-left';
         btn.textContent = 'Home';
-        btn.href = '/index';
+        btn.href = '/';
         info.appendChild(btn);
 
     // add info div to row
